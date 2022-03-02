@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Sales.Models;
 
+
 namespace Sales.Data
 {
     public class SalesContext : DbContext
     {
-        public SalesContext (DbContextOptions<SalesContext> options)
+        public SalesContext(DbContextOptions<SalesContext> options)
             : base(options)
         {
         }
