@@ -16,6 +16,7 @@ namespace Sales.Models
 
         [Required]
         [Display(Name = "Amount")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public double Amount { get; set; }
 
         [Required]
