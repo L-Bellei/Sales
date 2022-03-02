@@ -25,10 +25,16 @@ namespace Sales.Services
             _context.SaveChanges();
         }
 
-        public void Delete(Seller obj)
+        public Seller FindById(int id)
         {
-            _context.Remove(obj);
-            _context.SaveChanges(true);
+            return _context.Seller.FirstOrDefault(obj=> obj.Id == id);
+        }
+
+        public void Delete(int id)
+        {
+            var obj = _context.Seller.Find(id);
+            _context.Seller.Remove(obj);
+            _context.SaveChanges();
         }
     }
 }
