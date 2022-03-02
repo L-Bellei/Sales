@@ -7,7 +7,11 @@ namespace Sales.Models
 {
     public class Department
     {
+        [Key]
         public int Id { get; set; }
+
+        [Required]
+        [Display(Name = "Name")]
         public string Name { get; set; }
         public ICollection<Seller> Sellers { get; set; } = new List<Seller>();
 

@@ -6,10 +6,22 @@ namespace Sales.Models
 {
     public class SalesRecord
     {
+        [Key]
         public int Id { get; set; }
+
+        [Required]
+        [Display(Name = "Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Date { get; set; }
+
+        [Required]
+        [Display(Name = "Amount")]
         public double Amount { get; set; }
+
+        [Required]
+        [Display(Name = "Sale status")]
         public SaleStatus Status { get; set; }
+
         public Seller Seller { get; set; }
 
         public SalesRecord() { }

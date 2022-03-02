@@ -336,6 +336,11 @@ button {
   border-radius: 0;
 }
 
+.format-buttons {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
 button:focus:not(:focus-visible) {
   outline: 0;
 }

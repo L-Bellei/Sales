@@ -1,0 +1,38 @@
+﻿@model Sales.Models.Seller
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center" style="padding-bottom: 25px">Insert a new Seller</h1>
+
+<h4 style="padding-bottom:15px">Seller</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label" style="padding-top:10px"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label" style="padding-top:10px"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label" style="padding-top:10px"></label>
+                <input asp-for="BirthDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BaseSalary" class="control-label" style="padding-top:10px"></label>
+                <input asp-for="BaseSalary" class="form-control" />
+            </div>
+            <div class="btn-group" style="padding-top:10px" role="group" aria-label="Basic radio toggle button group">
+                <input type="submit" value="Create" class="btn btn-dark" style="padding-top: 10px"/>
+                <a asp-action="Index" class="btn btn-dark">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
