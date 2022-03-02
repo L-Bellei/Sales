@@ -1,7 +1,43 @@
-﻿@{
-    ViewData["Title"] = "Index";
+﻿@model IEnumerable<Sales.Models.Seller>
+
+@{
+    ViewData["Title"] = "Sellers";
 }
 
-<h1>Sellers</h1>
+<h1>@ViewData["Title"]</h1>
 
-<p>Sellers page in development</p>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            @Html.DisplayNameFor(model => model.Name)
+        </tr>
+        <tr>
+            @Html.DisplayNameFor(model => model.Email)
+        </tr>
+        <tr>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </tr>
+        <tr>
+            @Html.DisplayNameFor(model => model.BaseSalary)
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BaseSalary)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
