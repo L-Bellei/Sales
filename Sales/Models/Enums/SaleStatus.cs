@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Sales.Models.Enums
+﻿namespace Sales.Models.Enums
 {
     public enum SaleStatus : int
     {
