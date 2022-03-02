@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace Sales.Models
@@ -12,9 +13,8 @@ namespace Sales.Models
 
         public Department() { }
 
-        public Department(int id, string name)
+        public Department(string name)
         {
-            Id = id;
             Name = name;
         }
 
