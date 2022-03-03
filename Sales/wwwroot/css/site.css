@@ -61,6 +61,25 @@ body {
   line-height: 60px; 
 }
 
-.font-text {
-    font-family: var(--bs-font-monospace);
+.title-text {
+    font-family: 'Franklin Gothic Medium', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    font-size: 75px;
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+
+.form-text {
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', sans-serif;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: black;
+}
+
+.legend-text {
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', sans-serif;
+    color: black;
 }
