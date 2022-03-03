@@ -30,14 +30,21 @@ namespace Sales.Services
 
         public async Task<Seller> FindByIdAsync(int id)
         {
-            return await _context.Seller.Include(obj => obj.Department).FirstOrDefaultAsync(obj=> obj.Id == id);
+            return await _context.Seller.Include(obj => obj.Department).FirstOrDefaultAsync(obj => obj.Id == id);
         }
 
         public async Task DeleteAsync(int id)
         {
-            var obj = await _context.Seller.FindAsync(id);
-            _context.Seller.Remove(obj);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var obj = await _context.Seller.FindAsync(id);
+                _context.Seller.Remove(obj);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                throw new IntegrityException("This seller can not be deleted because he have active sales");
+            }
         }
 
         public async Task UpdateAsync(Seller obj)
@@ -53,7 +60,7 @@ namespace Sales.Services
                 _context.Update(obj);
                 await _context.SaveChangesAsync();
             }
-            catch(DbUpdateConcurrencyException e)
+            catch (DbUpdateConcurrencyException e)
             {
                 throw new DbConcurrencyException(e.Message);
             }
